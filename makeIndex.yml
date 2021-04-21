@@ -1,0 +1,27 @@
+name: index_git
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
+    
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8 #install the python needed
+
+    - name: execute py script
+      run: |
+        python ./.github/workflows/index.py
+        touch test.html
+        
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Indexed Directory
+        file_pattern: '*.html'
