@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Index of {{ folderPath }}</title></head>
+<body>
+    <h2>Index of {{ folderPath }}</h2>
+    <hr>
+    <table class="fs">
+    	<tr>
+    		<th valign="top">
+    			<img src="data:," alt="[ICO]">
+    		</th>
+    		<th>
+    			<a href="#">Name</a>
+    		</th>
+    		<th>
+    			<a href="#">Last modified</a>
+    		</th>
+    		<th>
+    			<a href="#">Size</a>
+    		</th>
+    	</tr>
+    	<tr>
+	    	<td valign="top">
+		    	<img src="data:," alt="[parent]">
+	    	</td>
+	    	<td>
+	    		<a href="#">Parent Directory</a>
+	    	</td>
+	    	<td>&nbsp;</td>
+	    	<td align="right">  - </td>
+    	</tr>
+    	st
+    	{% for item in items %}
+        <tr>
+        	<td valign="top">
+        		<img src="{{ item.icon }}s" alt="[audio]">
+        	</td>
+        	<td>
+        		<a href="{{ item.path }}">{{ item.name }}</a>
+        	</td>
+        	<td align="right">{{ item.mod }}</td>
+        	<td align="right">{{ item.size }}</td>
+        </tr>
+        {% endfor %}
+    	
+	</table>
+</body>
+</html>
