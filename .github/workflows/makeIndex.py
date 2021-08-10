@@ -30,7 +30,7 @@ def whatIcon(extension):
         "folder-home": "folder-home.svg"
     }
 
-    return "/public/icons/" + str(icon_types.get(extension, "unknown.svg"))
+    return "./public/icons/" + str(icon_types.get(extension, "unknown.svg"))
 
 
 def index(path):
