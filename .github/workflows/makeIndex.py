@@ -2,6 +2,9 @@ import io
 import datetime
 from pathlib import Path
 
+# Define this variable with your hostname / Hostname of github pages (username.github.io/projectname)
+global hostname_site = "https://3n3a.github.io/makeIndex"
+
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 env = Environment(
     loader=FileSystemLoader('.github/workflows/templates/'),
@@ -30,7 +33,7 @@ def whatIcon(extension):
         "folder-home": "folder-home.svg"
     }
 
-    return "./public/icons/" + str(icon_types.get(extension, "unknown.svg"))
+    return hostname_site + "/public/icons/" + str(icon_types.get(extension, "unknown.svg"))
 
 
 def index(path):
